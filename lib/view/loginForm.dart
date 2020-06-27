@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:greenapp_flutterhack/constants/colors.dart';
 
 Widget loginForm() {
   return Scaffold(
@@ -73,7 +74,7 @@ Widget loginForm() {
             height: 45,
             decoration: BoxDecoration(
                 border: Border.all(
-                  color: Color.fromRGBO(0, 153, 102, 130),
+                  color: AppColors.cleargreen,
                 ),
                 color: Color(0XFFEFF3F6),
                 borderRadius: BorderRadius.circular(10.0),
@@ -114,7 +115,7 @@ Widget loginForm() {
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
-                    color: Color.fromRGBO(0, 153, 102, 1),
+                    color: AppColors.green,
                   ),
                 ),
               ),
@@ -137,7 +138,7 @@ Widget loginForm() {
                         fontWeight: FontWeight.w700),
                   )),
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(0, 153, 102, 1),
+                      color: AppColors.green,
                       borderRadius: BorderRadius.circular(10.0),
                       boxShadow: [
                         BoxShadow(
@@ -175,7 +176,7 @@ Widget loginForm() {
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
-                  color: Color.fromRGBO(0, 153, 102, 1),
+                  color: AppColors.green,
                 ),
               ),
             ],
