@@ -1,5 +1,4 @@
 part of 'login_bloc.dart';
-import 'package:meta/meta.dart';
 
 @immutable
 class LoginState {
@@ -11,43 +10,38 @@ class LoginState {
 
   bool get isFormValid => isEmailValid && isPasswordValid;
 
-  LoginState({
-    @required this.isEmailValid,
-    @required this.isPasswordValid,
-    @required this.isSubmitting,
-    @required this.isSuccess,
-    @required this.isFailure
-  });
+  LoginState(
+      {@required this.isEmailValid,
+      @required this.isPasswordValid,
+      @required this.isSubmitting,
+      @required this.isSuccess,
+      @required this.isFailure});
 
-  factory LoginState.initial(){
+  factory LoginState.initial() {
     return LoginState(
-      isEmailValid: true,
-      isPasswordValid: true,
-      isSubmitting: false,
-      isSuccess: false,
-      isFailure: false
-    );
+        isEmailValid: true,
+        isPasswordValid: true,
+        isSubmitting: false,
+        isSuccess: false,
+        isFailure: false);
   }
 
-  factory LoginState.loading(){
+  factory LoginState.loading() {
     return LoginState(
-      isEmailValid: true,
-      isPasswordValid: true,
-      isSubmitting: true,
-      isSuccess: false,
-      isFailure: false
-    );
+        isEmailValid: true,
+        isPasswordValid: true,
+        isSubmitting: true,
+        isSuccess: false,
+        isFailure: false);
   }
 
-
-  factory LoginState.failure(){
+  factory LoginState.failure() {
     return LoginState(
-      isEmailValid: true,
-      isPasswordValid: true,
-      isSubmitting: false,
-      isSuccess: false,
-      isFailure: true
-    );
+        isEmailValid: true,
+        isPasswordValid: true,
+        isSubmitting: false,
+        isSuccess: false,
+        isFailure: true);
   }
 
   factory LoginState.success() {
@@ -59,7 +53,6 @@ class LoginState {
       isFailure: false,
     );
   }
-
 
   LoginState update({
     bool isEmailValid,
@@ -73,7 +66,6 @@ class LoginState {
       isFailure: false,
     );
   }
-
 
   LoginState copyWith({
     bool isEmailValid,
@@ -92,7 +84,7 @@ class LoginState {
     );
   }
 
-   @override
+  @override
   String toString() {
     return '''LoginState {
       isEmailValid: $isEmailValid,
@@ -102,6 +94,4 @@ class LoginState {
       isFailure: $isFailure,
     }''';
   }
-
-  
 }

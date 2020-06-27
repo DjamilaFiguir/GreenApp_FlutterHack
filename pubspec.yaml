@@ -31,6 +31,7 @@ dependencies:
   firebase_auth: ^0.16.1
   meta: ^1.1.8
   rxdart: ^0.24.1
+  font_awesome_flutter: ^8.8.1
 
 
   # The following adds the Cupertino Icons font to your application.
