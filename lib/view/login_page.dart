@@ -1,6 +1,4 @@
-import 'package:greenapp_flutterhack/bloc_delegate.dart';
 import 'package:flutter/material.dart';
-import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:greenapp_flutterhack/bloc/authentification/authentification_bloc.dart';
 import 'package:greenapp_flutterhack/Repository/user_repository.dart';
@@ -20,11 +18,8 @@ void main() {
 }
 
 class App extends StatelessWidget {
-  final UserRepository _userRepository;
-
   App({Key key, @required UserRepository userRepository})
       : assert(userRepository != null),
-        _userRepository = userRepository,
         super(key: key);
 
   @override
