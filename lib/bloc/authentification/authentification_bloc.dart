@@ -10,35 +10,31 @@ part 'authentification_state.dart';
 
 class AuthentificationBloc
     extends Bloc<AuthentificationEvent, AuthentificationState> {
-
-    final UserRepository _userRepository;
+  final UserRepository _userRepository;
 
   AuthentificationBloc({@required UserRepository userRepository})
-    : assert(userRepository != null),
-      _userRepository = userRepository;  
-  
+      : assert(userRepository != null),
+        _userRepository = userRepository;
+
   @override
   AuthentificationState get initialState => AuthentificationInitial();
 
   @override
   Stream<AuthentificationState> mapEventToState(
     AuthentificationEvent event,
-<<<<<<< HEAD
-  ) async* {}
-=======
   ) async* {
-    if(event is AuthenticationStarted){
+    if (event is AuthenticationStarted) {
       yield* _mapAuthentificationStartedToState();
-    } else if(event is AuthenticationLoggedIn){
+    } else if (event is AuthenticationLoggedIn) {
       yield* _mapAuthentificationLoggedInToState();
-    } else if(event is AuthenticationLoggedOut){
+    } else if (event is AuthenticationLoggedOut) {
       yield* _mapAuthentificationLoggedOutToState();
     }
   }
 
-  Stream<AuthentificationState> _mapAuthentificationStartedToState() async*{
+  Stream<AuthentificationState> _mapAuthentificationStartedToState() async* {
     final isSignedIn = await _userRepository.isSignedIn();
-    if(isSignedIn){
+    if (isSignedIn) {
       final name = await _userRepository.getUser();
       yield AuthenticationSuccess(name);
     } else {
@@ -50,11 +46,8 @@ class AuthentificationBloc
     yield AuthenticationSuccess(await _userRepository.getUser());
   }
 
-
   Stream<AuthentificationState> _mapAuthentificationLoggedOutToState() async* {
     yield AuthenticationFailure();
     _userRepository.signOut();
   }
-
->>>>>>> master
 }

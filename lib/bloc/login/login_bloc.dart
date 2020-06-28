@@ -20,11 +20,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginState get initialState => LoginState.initial();
 
   @override
-<<<<<<< HEAD
-  Stream<LoginState> mapEventToState(
-    LoginEvent event,
-  ) async* {}
-=======
   Stream<Transition<LoginEvent, LoginState>> transformEvents(
     Stream<LoginEvent> events,
     TransitionFunction<LoginEvent, LoginState> transitionFn,
@@ -90,5 +85,4 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       yield LoginState.failure();
     }
   }
->>>>>>> master
 }
