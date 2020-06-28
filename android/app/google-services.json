@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "516654589387",
+    "firebase_url": "https://greenapp-flutterhack.firebaseio.com",
+    "project_id": "greenapp-flutterhack",
+    "storage_bucket": "greenapp-flutterhack.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516654589387:android:867f1726759f8fdf5a824e",
+        "android_client_info": {
+          "package_name": "com.example.greenapp_flutterhack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516654589387-5dsp0s78qeo4spsfsd2gev3h6kls5f47.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.greenapp_flutterhack",
+            "certificate_hash": "a7c010dda0c7ed96f4cb9df85c2bfa3836424492"
+          }
+        },
+        {
+          "client_id": "516654589387-kmdacnrp303s7s8dijgd9vb7jmfk1krn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7ELBBYpnhM9W_y9lz5aiags2Y-Y_2TNk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "516654589387-kmdacnrp303s7s8dijgd9vb7jmfk1krn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
