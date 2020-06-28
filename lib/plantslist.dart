@@ -52,7 +52,8 @@ class _PlantListState extends State<PlantList> {
               getPlantCard(
                   'assets/echeveria.png', '45', 'OUTDOOR', 'Echeveria'),
               SizedBox(width: 15.0),
-              getPlantCard('assets/plant.png', '15', 'OUTDOOR', 'Tree'),
+              getPlantCard(
+                  'assets/flowerplant.png', '15', 'OUTDOOR', 'Red flower'),
               SizedBox(width: 15.0),
               getPlantCard(
                   'assets/whiteplant.png', '55', 'OUTDOOR', 'whiteplant'),
@@ -161,7 +162,8 @@ class _PlantListState extends State<PlantList> {
                   borderRadius: BorderRadius.circular(15.0),
                   color: Colors.white),
               child: Center(
-                  child: Icon(Icons.live_help, color: AppColors.clearMgreen)),
+                  child: Icon(Icons.shopping_basket,
+                      color: AppColors.clearMgreen)),
             ),
           ),
         )

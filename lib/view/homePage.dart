@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
           name: "Plants",
           icon: Icons.filter_vintage,
           baseStyle:
-              TextStyle(color: Colors.white.withOpacity(0.8), fontSize: 23.0),
+              TextStyle(color: Colors.white.withOpacity(0.7), fontSize: 23.0),
           colorLineSelected: AppColors.selectedColor,
         ),
         PlantsPage()));
@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
           name: "Favotire",
           icon: Icons.favorite,
           baseStyle:
-              TextStyle(color: Colors.white.withOpacity(0.8), fontSize: 23.0),
+              TextStyle(color: Colors.white.withOpacity(0.7), fontSize: 23.0),
           colorLineSelected: AppColors.selectedColor,
         ),
         FavoritPage()));
@@ -37,7 +37,10 @@ class _HomePageState extends State<HomePage> {
         new ItemHiddenMenu(
           name: "Notifications",
           icon: Icons.notifications,
-          baseStyle: TextStyle(color: Colors.green, fontSize: 23.0),
+          baseStyle: TextStyle(
+            color: Colors.white.withOpacity(0.7),
+            fontSize: 23.0,
+          ),
           colorLineSelected: AppColors.selectedColor,
         ),
         FavoritPage()));

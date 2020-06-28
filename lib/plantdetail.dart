@@ -46,7 +46,7 @@ class PlantDetail extends StatelessWidget {
                   backgroundColor: Colors.transparent,
                   // mini: true,
                   elevation: 0.0,
-                  child: Icon(Icons.shopping_cart,
+                  child: Icon(Icons.shopping_basket,
                       color: Colors.white, size: 24.0),
                 ),
               ),
@@ -112,7 +112,7 @@ class PlantDetail extends StatelessWidget {
                 top: (MediaQuery.of(context).size.height / 2) - 180.0,
                 left: (MediaQuery.of(context).size.width / 2) - 30.0,
                 child: Image(
-                  image: AssetImage('assets/echeveria.png'),
+                  image: AssetImage('assets/flowerplant.png'),
                   fit: BoxFit.cover,
                   height: 220.0,
                 ),
