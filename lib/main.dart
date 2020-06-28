@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:greenapp_flutterhack/view/homePage.dart';
 import 'package:greenapp_flutterhack/view/loginPage.dart';
 
 void main() {
@@ -14,8 +13,9 @@ class MyApp extends StatelessWidget {
         title: 'Green ++',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-            primarySwatch: Colors.green,
-            scaffoldBackgroundColor: Color(0XFFEFF3F6)),
+          primarySwatch: Colors.green,
+          scaffoldBackgroundColor: Color(0XFFEFF3F6),
+        ),
         home: LoginPage());
   }
 }

@@ -37,8 +37,7 @@ class _HomePageState extends State<HomePage> {
         new ItemHiddenMenu(
           name: "Notifications",
           icon: Icons.notifications,
-          baseStyle:
-              TextStyle(color: Colors.white.withOpacity(0.8), fontSize: 23.0),
+          baseStyle: TextStyle(color: Colors.green, fontSize: 23.0),
           colorLineSelected: AppColors.selectedColor,
         ),
         FavoritPage()));
@@ -48,9 +47,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return HiddenDrawerMenu(
-      iconMenuAppBar: Icon(Icons.filter_vintage),
-      backgroundColorMenu: AppColors.green,
-      backgroundColorAppBar: AppColors.green,
+      elevationAppBar: 0.0,
+      backgroundColorMenu: AppColors.clearMgreen,
+      backgroundColorAppBar: AppColors.clearMgreen,
       screens: itens,
     );
   }

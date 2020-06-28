@@ -45,6 +45,12 @@ dev_dependencies:
 flutter:
   assets:
     - assets/logo.png
+    - assets/plant.png
+    - assets/ficus.png
+    - assets/whiteplant.png
+    - assets/flowerplant.png
+    - assets/smallplant.png
+    - assets/echeveria.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

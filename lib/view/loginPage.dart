@@ -51,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
             Container(
               height: 45,
               decoration: BoxDecoration(
-                  color: Color(0XFFEFF3F6),
+                  color: Colors.white,
                   border: Border.all(
                     color: Color.fromRGBO(0, 153, 102, 130),
                   ),
@@ -87,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                   border: Border.all(
                     color: AppColors.cleargreen,
                   ),
-                  color: Color(0XFFEFF3F6),
+                  color: Colors.white, //Color(0XFFEFF3F6),
                   borderRadius: BorderRadius.circular(10.0),
                   boxShadow: [
                     BoxShadow(
