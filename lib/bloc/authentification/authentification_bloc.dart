@@ -14,7 +14,5 @@ class AuthentificationBloc
   @override
   Stream<AuthentificationState> mapEventToState(
     AuthentificationEvent event,
-  ) async* {
-    // TODO: implement mapEventToState
-  }
+  ) async* {}
 }
