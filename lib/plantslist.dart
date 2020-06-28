@@ -49,15 +49,14 @@ class _PlantListState extends State<PlantList> {
             controller: _scrollController,
             scrollDirection: Axis.horizontal,
             children: <Widget>[
-              getPlantCard(
-                  'assets/echeveria.png', '45', 'OUTDOOR', 'Echeveria'),
+              getPlantCard('assets/echeveria.png', '45', 'SPRING', 'Echeveria'),
               SizedBox(width: 15.0),
               getPlantCard(
-                  'assets/flowerplant.png', '15', 'OUTDOOR', 'Red flower'),
+                  'assets/flowerplant.png', '15', 'SPRING', 'Red flower'),
               SizedBox(width: 15.0),
-              getPlantCard('assets/plant.png', '55', 'OUTDOOR', 'Trees'),
+              getPlantCard('assets/plant.png', '55', 'ALL', 'Trees'),
               SizedBox(width: 15.0),
-              getPlantCard('assets/flower.png', '25', 'INDOOR', 'Ficus'),
+              getPlantCard('assets/flower.png', '25', 'WINTER', 'Ficus'),
               SizedBox(width: 15.0),
             ],
           ),
@@ -65,7 +64,7 @@ class _PlantListState extends State<PlantList> {
         Padding(
           padding: EdgeInsets.only(left: 25.0, top: 10.0),
           child: Text(
-            'Description',
+            'Afforestation campaign',
             style: TextStyle(
                 fontFamily: 'Montserrat',
                 color: Colors.black,
@@ -74,7 +73,7 @@ class _PlantListState extends State<PlantList> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(left: 25.0, top: 10.0),
+          padding: EdgeInsets.only(left: 25.0, top: 10.0, bottom: 25.0),
           child: Text(
             description,
             style: TextStyle(
@@ -82,7 +81,7 @@ class _PlantListState extends State<PlantList> {
               fontSize: 12.0,
             ),
           ),
-        )
+        ),
       ],
     );
   }
@@ -135,6 +134,14 @@ class _PlantListState extends State<PlantList> {
                               fontFamily: 'Montserrat',
                               fontSize: 20.0,
                               fontWeight: FontWeight.w600,
+                              color: Colors.white),
+                        ),
+                        Text(
+                          plantType,
+                          style: TextStyle(
+                              fontFamily: 'Montserrat',
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.w300,
                               color: Colors.white),
                         )
                       ],
