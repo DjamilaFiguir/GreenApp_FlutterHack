@@ -46,7 +46,7 @@ flutter:
   assets:
     - assets/logo.png
     - assets/plant.png
-    - assets/ficus.png
+    - assets/flower.png
     - assets/whiteplant.png
     - assets/flowerplant.png
     - assets/smallplant.png

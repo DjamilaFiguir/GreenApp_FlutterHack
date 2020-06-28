@@ -55,12 +55,9 @@ class _PlantListState extends State<PlantList> {
               getPlantCard(
                   'assets/flowerplant.png', '15', 'OUTDOOR', 'Red flower'),
               SizedBox(width: 15.0),
-              getPlantCard(
-                  'assets/whiteplant.png', '55', 'OUTDOOR', 'whiteplant'),
+              getPlantCard('assets/plant.png', '55', 'OUTDOOR', 'Trees'),
               SizedBox(width: 15.0),
-              getPlantCard('assets/ficus.png', '25', 'INDOOR', 'Ficus'),
-              SizedBox(width: 15.0),
-              getPlantCard('assets/smallplant.png', '20', 'INDOOR', 'Ficus'),
+              getPlantCard('assets/flower.png', '25', 'INDOOR', 'Ficus'),
               SizedBox(width: 15.0),
             ],
           ),
