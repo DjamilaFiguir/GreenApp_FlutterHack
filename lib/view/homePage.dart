@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:greenapp_flutterhack/constants/colors.dart';
 import 'package:greenapp_flutterhack/view/favoritePage.dart';
+import 'package:greenapp_flutterhack/view/notification.dart';
 import 'package:greenapp_flutterhack/view/plantsPage.dart';
 import 'package:hidden_drawer_menu/hidden_drawer/hidden_drawer_menu.dart';
 import 'package:hidden_drawer_menu/hidden_drawer/screen_hidden_drawer.dart';
@@ -43,7 +44,7 @@ class _HomePageState extends State<HomePage> {
           ),
           colorLineSelected: AppColors.selectedColor,
         ),
-        FavoritPage()));
+        NotificationPage()));
     super.initState();
   }
 
