@@ -8,11 +8,8 @@ import 'google_login_button.dart';
 import 'login_button.dart';
 
 class LoginForm extends StatefulWidget {
-  final UserRepository _userRepository;
-
   LoginForm({Key key, @required UserRepository userRepository})
       : assert(userRepository != null),
-        _userRepository = userRepository,
         super(key: key);
 
   State<LoginForm> createState() => _LoginFormState();
@@ -23,8 +20,6 @@ class _LoginFormState extends State<LoginForm> {
   final TextEditingController _passwordController = TextEditingController();
 
   LoginBloc _loginBloc;
-
-  UserRepository get _userRepository => widget._userRepository;
 
   bool get isPopulated =>
       _emailController.text.isNotEmpty && _passwordController.text.isNotEmpty;
