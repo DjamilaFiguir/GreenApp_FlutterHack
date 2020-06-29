@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:greenapp_flutterhack/constants/colors.dart';
 
 class PlantDetail extends StatefulWidget {
@@ -10,6 +11,51 @@ class PlantDetail extends StatefulWidget {
 }
 
 class _PlantDetailState extends State<PlantDetail> {
+  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
+  @override
+  initState() {
+    super.initState();
+    // initialise the plugin. app_icon needs to be a added as a drawable resource to the Android head project
+    // If you have skipped STEP 3 then change app_icon to @mipmap/ic_launcher
+    var initializationSettingsAndroid =
+        new AndroidInitializationSettings('@mipmap/ic_launcher');
+    var initializationSettingsIOS = new IOSInitializationSettings();
+    var initializationSettings = new InitializationSettings(
+        initializationSettingsAndroid, initializationSettingsIOS);
+    flutterLocalNotificationsPlugin = new FlutterLocalNotificationsPlugin();
+    flutterLocalNotificationsPlugin.initialize(initializationSettings,
+        onSelectNotification: onSelectNotification);
+  }
+
+  Future onSelectNotification(String payload) async {
+    showDialog(
+      context: context,
+      builder: (_) {
+        return new AlertDialog(
+          title: Text("PayLoad"),
+          content: Text("Payload : $payload"),
+        );
+      },
+    );
+  }
+
+  Future _showNotificationWithoutSound() async {
+    var androidPlatformChannelSpecifics = new AndroidNotificationDetails(
+        'your channel id', 'your channel name', 'your channel description',
+        playSound: false, importance: Importance.Max, priority: Priority.High);
+    var iOSPlatformChannelSpecifics =
+        new IOSNotificationDetails(presentSound: false);
+    var platformChannelSpecifics = new NotificationDetails(
+        androidPlatformChannelSpecifics, iOSPlatformChannelSpecifics);
+    await flutterLocalNotificationsPlugin.show(
+      0,
+      'Spider Plant',
+      'The Spider plant need some water',
+      platformChannelSpecifics,
+      payload: 'No_Sound',
+    );
+  }
+
   String season = "Spring";
   String indTitel = "All to know...";
   String indSubtitle =
@@ -54,7 +100,7 @@ class _PlantDetailState extends State<PlantDetail> {
                 Padding(
                   padding: EdgeInsets.only(
                       top: 10.0,
-                      left: MediaQuery.of(context).size.width - 120.0),
+                      left: MediaQuery.of(context).size.width - 125.0),
                   child: Row(
                     children: [
                       Text(
@@ -65,9 +111,12 @@ class _PlantDetailState extends State<PlantDetail> {
                             fontWeight: FontWeight.w600,
                             color: AppColors.selectedColor),
                       ),
-                      SizedBox(width: 7.0),
-                      Icon(Icons.notifications_active,
-                          color: Colors.white, size: 24.0),
+                      IconButton(
+                          icon: Icon(Icons.notifications_active,
+                              color: Colors.white, size: 24.0),
+                          onPressed: () {
+                            _showNotificationWithoutSound();
+                          }),
                     ],
                   ),
                 ),
