@@ -13,7 +13,6 @@ class SimpleBlocDelegate extends BlocDelegate {
     super.onError(bloc, error, stackTrace);
   }
 
-  @override
   void onTransiton(Bloc bloc, Transition transition) {
     print(transition);
     super.onTransition(bloc, transition);

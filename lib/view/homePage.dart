@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
     itens.add(new ScreenHiddenDrawer(
         new ItemHiddenMenu(
           name: "Plants",
-          icon: Icons.filter_vintage,
+          //icon: Icons.filter_vintage,
           baseStyle:
               TextStyle(color: Colors.white.withOpacity(0.7), fontSize: 23.0),
           colorLineSelected: AppColors.selectedColor,
@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
     itens.add(new ScreenHiddenDrawer(
         new ItemHiddenMenu(
           name: "Favotire",
-          icon: Icons.favorite,
+          //icon: Icons.favorite,
           baseStyle:
               TextStyle(color: Colors.white.withOpacity(0.7), fontSize: 23.0),
           colorLineSelected: AppColors.selectedColor,
@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
     itens.add(new ScreenHiddenDrawer(
         new ItemHiddenMenu(
           name: "Notifications",
-          icon: Icons.notifications,
+          //icon: Icons.notifications,
           baseStyle: TextStyle(
             color: Colors.white.withOpacity(0.7),
             fontSize: 23.0,
