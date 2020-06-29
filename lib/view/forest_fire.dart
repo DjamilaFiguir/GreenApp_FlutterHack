@@ -23,113 +23,131 @@ class _ForestFireState extends State<ForestFire> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [
-          Visibility(
-            visible: isVisibil,
-            child: Card(
-              elevation: 10,
-              color: Color(0xffffb6b9),
+      body: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: ListView(
+          children: [
+            Visibility(
+              visible: isVisibil,
+              child: Card(
+                elevation: 5,
+                color: Color(0xffffb6b9),
+                child: Column(children: [
+                  ListTile(
+                    leading: Icon(Icons.clear),
+                    title: Text(number0),
+                    subtitle: Text(number01),
+                  ),
+                ]),
+              ),
+            ),
+            Card(
+              elevation: 5,
+              color: Colors.white,
               child: Column(children: [
                 ListTile(
-                  leading: Icon(Icons.clear),
-                  title: Text(number0),
-                  subtitle: Text(number01),
+                  leading: Icon(
+                    Icons.clear,
+                    color: Colors.red,
+                  ),
+                  title: Text(
+                    number1,
+                    style: TextStyle(color: Colors.red),
+                  ),
+                  subtitle:
+                      Text("Report a fire in this location: Algeria, Oran"),
+                ),
+                Visibility(
+                  visible: number1V,
+                  child: ButtonBar(
+                    children: [
+                      FlatButton(
+                        child: Text(
+                          'Confirme',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            number1 = "211 personnes";
+                            number1V = false;
+                          });
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ]),
             ),
-          ),
-          Card(
-            elevation: 10,
-            color: Color(0xffffb6b9),
-            child: Column(children: [
-              ListTile(
-                leading: Icon(Icons.clear),
-                title: Text(number1),
-                subtitle: Text("Report a fire in this location: Algeria, Oran"),
-              ),
-              Visibility(
-                visible: number1V,
-                child: ButtonBar(
-                  children: [
-                    FlatButton(
-                      child: Text(
-                        'Confirme',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                      onPressed: () {
-                        setState(() {
-                          number1 = "211 personnes";
-                          number1V = false;
-                        });
-                      },
-                    ),
-                  ],
+            Card(
+              elevation: 5,
+              color: Colors.white,
+              child: Column(children: [
+                ListTile(
+                  leading: Icon(Icons.clear, color: Colors.red),
+                  title: Text(
+                    number2,
+                    style: TextStyle(color: Colors.red),
+                  ),
+                  subtitle:
+                      Text("Report a fire in this location: Maroc, Rebat"),
                 ),
-              ),
-            ]),
-          ),
-          Card(
-            elevation: 10,
-            color: Color(0xffffb6b9),
-            child: Column(children: [
-              ListTile(
-                leading: Icon(Icons.clear),
-                title: Text(number2),
-                subtitle: Text("Report a fire in this location: Maroc, Rebat"),
-              ),
-              Visibility(
-                visible: number2V,
-                child: ButtonBar(
-                  children: [
-                    FlatButton(
-                      child: Text(
-                        'Confirme',
-                        style: TextStyle(color: Colors.black),
+                Visibility(
+                  visible: number2V,
+                  child: ButtonBar(
+                    children: [
+                      FlatButton(
+                        child: Text(
+                          'Confirme',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            number2 = "51 personnes";
+                            number2V = false;
+                          });
+                        },
                       ),
-                      onPressed: () {
-                        setState(() {
-                          number2 = "51 personnes";
-                          number2V = false;
-                        });
-                      },
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ]),
-          ),
-          Card(
-            elevation: 10,
-            color: Color(0xffffb6b9),
-            child: Column(children: [
-              ListTile(
-                leading: Icon(Icons.clear),
-                title: Text(number3),
-                subtitle: Text("Report a fire in this location: France, Paris"),
-              ),
-              Visibility(
-                visible: number3V,
-                child: ButtonBar(
-                  children: [
-                    FlatButton(
-                      child: Text(
-                        'Confirme',
-                        style: TextStyle(color: Colors.black),
+              ]),
+            ),
+            Card(
+              elevation: 5,
+              color: Colors.white,
+              child: Column(children: [
+                ListTile(
+                  leading: Icon(Icons.clear, color: Colors.red),
+                  title: Text(
+                    number3,
+                    style: TextStyle(color: Colors.red),
+                  ),
+                  subtitle:
+                      Text("Report a fire in this location: France, Paris"),
+                ),
+                Visibility(
+                  visible: number3V,
+                  child: ButtonBar(
+                    children: [
+                      FlatButton(
+                        child: Text(
+                          'Confirme',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            number3 = "6 personnes";
+                            number3V = false;
+                          });
+                        },
                       ),
-                      onPressed: () {
-                        setState(() {
-                          number3 = "6 personnes";
-                          number3V = false;
-                        });
-                      },
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ]),
-          ),
-        ],
+              ]),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.red,
@@ -140,7 +158,10 @@ class _ForestFireState extends State<ForestFire> {
               builder: (BuildContext context) {
                 return AlertDialog(
                   backgroundColor: Color(0xffffb6b9),
-                  title: Text("Report a Forest Fire !!"),
+                  title: Text(
+                    "Report a Forest Fire !!",
+                    style: TextStyle(color: Colors.red),
+                  ),
                   content: TextField(
                     onChanged: (value) {
                       setState(() {
@@ -151,7 +172,10 @@ class _ForestFireState extends State<ForestFire> {
                   ),
                   actions: [
                     FlatButton(
-                      child: Text("Cancel"),
+                      child: Text(
+                        "Cancel",
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      ),
                       onPressed: () {
                         setState(() {
                           Navigator.of(context).pop();
@@ -159,7 +183,10 @@ class _ForestFireState extends State<ForestFire> {
                       },
                     ),
                     FlatButton(
-                      child: Text("Confirme"),
+                      child: Text(
+                        "Confirme",
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      ),
                       onPressed: () {
                         setState(() {
                           isVisibil = true;

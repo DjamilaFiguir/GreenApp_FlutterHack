@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         title: 'Green ++',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.green,
+          primarySwatch: Colors.grey,
           scaffoldBackgroundColor: Color(0XFFEFF3F6),
         ),
         home: LoginPage());

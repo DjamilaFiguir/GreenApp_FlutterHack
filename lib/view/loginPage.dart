@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             SizedBox(
-              height: 5.0,
+              height: 15.0,
             ),
             Center(
               child: Text(
@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             SizedBox(
-              height: 35.0,
+              height: 25.0,
             ),
             Container(
               height: 45,
