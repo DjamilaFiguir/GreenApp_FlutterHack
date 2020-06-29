@@ -281,10 +281,22 @@ class _PlantDetailState extends State<PlantDetail> {
         bottomNavigationBar: CurvedNavigationBar(
           backgroundColor: Color(0xfff4ebc1),
           items: <Widget>[
-            Icon(Icons.book),
-            Icon(Icons.info),
-            Icon(Icons.filter_vintage),
-            Icon(Icons.format_color_fill),
+            Icon(
+              Icons.book,
+              color: AppColors.green,
+            ),
+            Icon(
+              Icons.info,
+              color: AppColors.green,
+            ),
+            Icon(
+              Icons.filter_vintage,
+              color: AppColors.green,
+            ),
+            Icon(
+              Icons.format_color_fill,
+              color: AppColors.green,
+            ),
           ],
           animationDuration: Duration(seconds: 1),
           onTap: (index) {
@@ -298,7 +310,7 @@ class _PlantDetailState extends State<PlantDetail> {
               setState(() {
                 indTitel = "Exposition";
                 indSubtitle =
-                    "- Needs excellent light.\n- Few hours of sunshine per day.";
+                    "- Needs excellent  .\n- Few hours of sunshine per day.";
               });
             } else if (index == 2) {
               setState(() {
