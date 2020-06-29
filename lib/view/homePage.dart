@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:greenapp_flutterhack/constants/colors.dart';
 import 'package:greenapp_flutterhack/view/favoritePage.dart';
+import 'package:greenapp_flutterhack/view/forest_fire.dart';
 import 'package:greenapp_flutterhack/view/notification.dart';
 import 'package:greenapp_flutterhack/view/plantsPage.dart';
 import 'package:hidden_drawer_menu/hidden_drawer/hidden_drawer_menu.dart';
@@ -45,6 +46,16 @@ class _HomePageState extends State<HomePage> {
           colorLineSelected: AppColors.selectedColor,
         ),
         NotificationPage()));
+    itens.add(new ScreenHiddenDrawer(
+        new ItemHiddenMenu(
+          name: "Forest Fire Reporting",
+          baseStyle: TextStyle(
+            color: Colors.red,
+            fontSize: 23.0,
+          ),
+          colorLineSelected: AppColors.selectedColor,
+        ),
+        ForestFire()));
     super.initState();
   }
 
