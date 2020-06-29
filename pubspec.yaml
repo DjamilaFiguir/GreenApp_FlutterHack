@@ -33,7 +33,9 @@ dependencies:
   rxdart: ^0.24.1
   font_awesome_flutter: ^8.8.1
   google_sign_in: ^4.5.1
-
+  curved_navigation_bar: ^0.3.3
+  datetime_picker_formfield: ^1.0.0
+  nice_button: ^0.1.7
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
 

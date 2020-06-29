@@ -1,6 +1,8 @@
+import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:flutter/material.dart';
 import 'package:greenapp_flutterhack/plantdetail.dart';
-
+import 'package:intl/intl.dart';
+import 'package:nice_button/NiceButton.dart';
 import 'constants/colors.dart';
 
 class PlantList extends StatefulWidget {
@@ -16,7 +18,7 @@ class _PlantListState extends State<PlantList> {
     'Some other description',
     'Third description'
   ];
-
+  var firstColor = AppColors.clearMgreen, secondColor = AppColors.clearMgreen;
   String description;
 
   @override
@@ -62,24 +64,25 @@ class _PlantListState extends State<PlantList> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(left: 25.0, top: 10.0),
-          child: Text(
-            'Afforestation campaign',
-            style: TextStyle(
-                fontFamily: 'Montserrat',
-                color: Colors.black,
-                fontSize: 17.0,
-                fontWeight: FontWeight.w500),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(left: 25.0, top: 10.0, bottom: 25.0),
-          child: Text(
-            description,
-            style: TextStyle(
-              fontFamily: 'Montserrat',
-              fontSize: 12.0,
-            ),
+          padding: EdgeInsets.only(left: 15.0, top: 10.0, right: 15.0),
+          child: Column(
+            children: [
+              Center(
+                  child: NiceButton(
+                // background: Colors.transparent,
+                radius: 15,
+                padding: const EdgeInsets.all(15),
+                text: "Add Afforestation Campaign",
+                fontSize: 18,
+                elevation: 1.0,
+                width: 300,
+                icon: Icons.add_location,
+                gradientColors: [secondColor, firstColor],
+                onPressed: () {
+                  _showcontent();
+                },
+              )),
+            ],
           ),
         ),
       ],
@@ -170,8 +173,152 @@ class _PlantListState extends State<PlantList> {
                       color: AppColors.clearMgreen)),
             ),
           ),
-        )
+        ),
       ],
     );
+  }
+
+  void _showcontent() {
+    showDialog<Null>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return new AlertDialog(
+          scrollable: true,
+          title: new Text(
+            'Afforestation campaign',
+            style: TextStyle(
+              fontSize: 18,
+            ),
+          ),
+          content: new SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: new ListBody(
+              children: <Widget>[
+                Container(
+                  height: 45,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                        color: Color.fromRGBO(0, 153, 102, 130),
+                      ),
+                      borderRadius: BorderRadius.circular(10.0),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Color.fromRGBO(0, 0, 0, 0.1),
+                            offset: Offset(6, 2),
+                            blurRadius: 6.0,
+                            spreadRadius: 2.0),
+                        BoxShadow(
+                            color: Color.fromRGBO(255, 255, 255, 0.9),
+                            offset: Offset(-6, -2),
+                            blurRadius: 6.0,
+                            spreadRadius: 2.0)
+                      ]),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Center(
+                      child: TextField(
+                        decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.place),
+                            border: InputBorder.none,
+                            hintText: "Place"),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                        color: Color.fromRGBO(0, 153, 102, 130),
+                      ),
+                      borderRadius: BorderRadius.circular(10.0),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Color.fromRGBO(0, 0, 0, 0.1),
+                            offset: Offset(6, 2),
+                            blurRadius: 6.0,
+                            spreadRadius: 2.0),
+                        BoxShadow(
+                            color: Color.fromRGBO(255, 255, 255, 0.9),
+                            offset: Offset(-6, -2),
+                            blurRadius: 6.0,
+                            spreadRadius: 2.0)
+                      ]),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Center(
+                      child: BasicDateTimeField(),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            new FlatButton(
+              color: Colors.black26,
+              child: new Text(
+                'Cancel',
+                style: TextStyle(color: Colors.black, fontSize: 16),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            new FlatButton(
+              color: AppColors.green,
+              child: new Text(
+                'Continue',
+                style: TextStyle(color: Colors.white, fontSize: 16),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+                // Navigator.pop(context);
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
+
+class BasicDateTimeField extends StatelessWidget {
+  final format = DateFormat("yyyy-MM-dd HH:mm");
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: <Widget>[
+      //Text('Basic date & time field (${format.pattern})'),
+      DateTimeField(
+        decoration: InputDecoration(
+            prefixIcon: Icon(Icons.date_range),
+            border: InputBorder.none,
+            hintText: "DateTime"),
+        format: format,
+        onShowPicker: (context, currentValue) async {
+          final date = await showDatePicker(
+              context: context,
+              firstDate: DateTime(1900),
+              initialDate: currentValue ?? DateTime.now(),
+              lastDate: DateTime(2100));
+          if (date != null) {
+            final time = await showTimePicker(
+              context: context,
+              initialTime:
+                  TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
+            );
+            return DateTimeField.combine(date, time);
+          } else {
+            return currentValue;
+          }
+        },
+      ),
+    ]);
   }
 }

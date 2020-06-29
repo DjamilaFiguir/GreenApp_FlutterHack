@@ -22,7 +22,7 @@ class _PlantsPageState extends State<PlantsPage>
     return Scaffold(
         body: ListView(
       children: <Widget>[
-        SizedBox(height: 15.0),
+        // SizedBox(height: 15.0),
         Padding(
           padding: const EdgeInsets.all(28.0),
           child: Center(
@@ -115,7 +115,7 @@ class _PlantsPageState extends State<PlantsPage>
               PlantList()
             ],
           ),
-        )
+        ),
       ],
     ));
   }
