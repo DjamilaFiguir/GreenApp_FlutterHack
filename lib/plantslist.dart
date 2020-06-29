@@ -71,7 +71,7 @@ class _PlantListState extends State<PlantList> {
                   child: NiceButton(
                 radius: 15,
                 padding: const EdgeInsets.all(15),
-                text: "Add Afforestation Plants",
+                text: "Add Afforestation Campaign",
                 fontSize: 18,
                 elevation: 1.0,
                 width: 300,
