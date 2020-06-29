@@ -1,4 +1,4 @@
-# greenapp_flutterhack
+# GREEN ++
 
 " It is an amazing act and of massive importance to recover the damage cause to nature in order to protect our balanced life cycle, which is really something to crow about.
 The destruction of forests could be the fault of human beings or nature itself. So whatever the reason is, there is always a need to make the necessary arrangement to recover from damage. Whoever and wherever you are! You can join us to save our planet before it is too late. For that we are offering you to cooperate by reforestation through our new application "Green ++".
